@@ -27,16 +27,18 @@ img{
     width: 100%;
     background-color: rgb(243, 241, 241);
     border-radius: 20px;
-    padding: 25px;
+    padding: 25px 25px 0 25px;
 }
 
 .task{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 button, input{
     border-radius: 10px;
+    border-color: rgb(243, 241, 241);
     padding: 10px;
     margin: 0 5px 0 5px;
 }
