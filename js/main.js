@@ -27,11 +27,22 @@ createApp({
     },
     methods: {
         addTodo(){
-           this.todoList.push(this.newTodo);
-           this.newTodo = "";
+            const newListItem = {
+                "text": this.newTodo,
+                "done": false
+            } 
+           this.todoList.push(newListItem);
+           this.newTodo = '';
         },
         removeTodo(i){
-            this.todoList.splice(i);
+            this.todoList.splice(i, 1);
+        },
+        onClickDone(i){
+            if(this.todoList[i].done === false){
+                this.todoList[i].done = true;
+            }else{
+                this.todoList[i].done = false;
+            }
         }
     }
 }).mount('#app')

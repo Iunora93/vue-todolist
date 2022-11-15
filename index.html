@@ -15,18 +15,19 @@
             <img src="logo.png" alt="logo">
         </div>
 
-        <form class="addText" @submit.prevent="addTodo">
+        <form class="addText" @submit.prevent @submit="addTodo">
             <input type="text" placeholder="Inserisci to do" v-model="newTodo">
             <button type="submit">Aggiungi</button>
         </form>
 
         <div class="tasks-container">
-            <ul>
+            <ul v-if="todoList.length > 0">
                 <li class="task" v-for="(todo, index) in todoList">
-                    {{todo.text}}
+                    <div :class="todo.done ? 'text':''" @click="onClickDone(index)">{{todo.text}}</div>
                     <i class="fas fa-times" @click="removeTodo(index)"></i>
                 </li>
             </ul>
+            <h2 v-else>Non sono presenti to do!</h2>
         </div>
 
     </div>
