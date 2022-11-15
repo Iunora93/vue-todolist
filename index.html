@@ -22,12 +22,8 @@
 
         <div class="tasks-container">
             <ul>
-                <li class="task">
-                    ciao
-                    <i class="fas fa-times"></i>
-                </li>
-                <li class="task">
-                    ciao
+                <li class="task" v-for="todo in todoList">
+                    {{todo.text}}
                     <i class="fas fa-times"></i>
                 </li>
             </ul>
