@@ -4,6 +4,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
+            newTodo : '',
             todoList : [
                 {
                     "text": "Ripasso lezione",
@@ -22,6 +23,15 @@ createApp({
                     "done": false
                 },
             ]
+        }
+    },
+    methods: {
+        addTodo(){
+           this.todoList.push(this.newTodo);
+           this.newTodo = "";
+        },
+        removeTodo(i){
+            this.todoList.splice(i);
         }
     }
 }).mount('#app')

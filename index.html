@@ -15,16 +15,16 @@
             <img src="logo.png" alt="logo">
         </div>
 
-        <form class="addText">
-            <input type="text">
+        <form class="addText" @submit.prevent="addTodo">
+            <input type="text" placeholder="Inserisci to do" v-model="newTodo">
             <button type="submit">Aggiungi</button>
         </form>
 
         <div class="tasks-container">
             <ul>
-                <li class="task" v-for="todo in todoList">
+                <li class="task" v-for="(todo, index) in todoList">
                     {{todo.text}}
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times" @click="removeTodo(index)"></i>
                 </li>
             </ul>
         </div>
